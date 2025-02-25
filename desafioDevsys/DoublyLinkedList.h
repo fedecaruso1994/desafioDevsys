@@ -102,11 +102,6 @@ public:
             return;  
         }
 
-        if (index == 0) {
-            addElementStart(value);
-            return;
-        }
-
         if (index == size-1) {
             addElementEnd(value);
             return;
@@ -186,7 +181,8 @@ public:
             temp = temp->prev;
         }
 
-        cout << endl;
+        
+
      
     }
 

@@ -6,10 +6,10 @@ using namespace std;
 
 int main() {
 
-    // Crear lista doblemente enlazada
+    // Creo la lista
     DoublyLinkedList list;
 
-    // Agregar elementos al inicio y al final
+    // Agrego elementos al inicio y al final
     list.addElementStart(5);
     list.addElementStart(3);
     list.addElementEnd(20);
@@ -21,7 +21,7 @@ int main() {
     list.printElements();
     cout << endl;
 
-    // Eliminar el primer y último elemento
+    // Probando metodos para eliminar
     list.deleteElementStart();
     list.deleteElementEnd();
 
