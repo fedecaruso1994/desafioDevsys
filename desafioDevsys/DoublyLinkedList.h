@@ -9,18 +9,24 @@ private:
     Node* head;
     Node* tail;
     int size;
+    int suma; 
 
 public:
     DoublyLinkedList() {
         head = nullptr;
         tail = nullptr;
         size = 0;
+        suma = 0;
     }
 
     int getSize() const {
         
         return size;
     
+    }
+
+    int getSuma() const {
+        return suma;
     }
 
     void addElementStart(int value) {
@@ -36,13 +42,14 @@ public:
             head = newNode;
         }
 
-        size++;  
+        suma += head->data;
+        size++; 
     }
 
     void addElementEnd(int value) {
         Node* newNode = new Node(value);  
 
-        if (tail == nullptr) {  // Lista vacía
+        if (tail == nullptr) { 
             head = newNode;
             tail = newNode;
         }
@@ -51,7 +58,7 @@ public:
             newNode->prev = tail;
             tail = newNode;
         }
-
+        suma += tail->data;
         size++;  
     }
 
@@ -71,8 +78,11 @@ public:
         else {
             tail = nullptr;  // Si la lista quedó vacía, tail también debe ser nullptr
         }
+
+        suma -= temp->data;
         delete temp;  
 
+       
         size--;
     }
 
@@ -90,8 +100,8 @@ public:
         else {
             head = nullptr;  
         }
-
-        delete temp;  // Liberamos la memoria
+        suma -= temp->data;
+        delete temp;  
         size--;
     }
 
@@ -118,6 +128,7 @@ public:
         newNode->prev = temp;
         temp->next = newNode;
         
+        suma += newNode->data;
         size++;
             
 
@@ -148,6 +159,8 @@ public:
         
         temp->prev->next = temp->next;
         temp->next->prev = temp->prev;
+
+        suma += temp->data;
 
         delete temp;  
         size--;

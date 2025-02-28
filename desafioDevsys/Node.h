@@ -12,6 +12,5 @@ struct Node {
 		next = nullptr;
 		prev = nullptr;
 
-
 	}
 };

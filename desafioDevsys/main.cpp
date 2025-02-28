@@ -29,7 +29,7 @@ int main() {
     list.printElements();
     cout << endl;
 
-     //Insertar después del índice 1
+    //Insertar después del índice 1
     list.addElementNextIdx(25, 1);
 
     cout << "Lista después de insertar 25 después del índice 1: " << endl;
@@ -44,6 +44,10 @@ int main() {
 
     cout << "Tamaño de la lista: " << list.getSize() << endl;
     cout << endl;
+
+    cout << "Tamaño de la lista: " << list.getSuma() << endl;
+    cout << endl;
+
 
     
     list.addElementNextIdx(70, 4);
